@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "portfolio_freelance_pack4",
   "version": "1.0.0",
   "private": true,
@@ -8,8 +8,12 @@
   },
   "scripts": {
     "serve": "http-server . -p 4173 -c-1 --silent",
-    "check:html": "html-validate \"index.html\" \"fr/**/*.html\" \"en/**/*.html\" \"de/**/*.html\"",
-    "check:links": "start-server-and-test serve http://127.0.0.1:4173 \"linkinator http://127.0.0.1:4173 --recurse --skip 'mailto:|tel:|javascript:|#'\"",
+    "prepare:reports": "node -e \"require('fs').mkdirSync('reports',{recursive:true})\"",
+    "check:html": "npx html-validate \"**/*.html\"",
+    "check:links": "npx linkinator https://devopsmanon-cmd.github.io/portfolio_freelance_pack4/ --recurse --timeout 10000",
+    "audit:lighthouse": "npx lighthouse https://devopsmanon-cmd.github.io/portfolio_freelance_pack4/ --output html --output-path ./reports/lighthouse.html",
+    "test:e2e": "npx playwright test",
+    "check:links:local": "start-server-and-test serve http://127.0.0.1:4173 \"linkinator http://127.0.0.1:4173 --recurse --skip 'mailto:|tel:|javascript:|#'\"",
     "lighthouse": "lhci autorun --config=./lighthouserc.json",
     "lighthouse:single": "start-server-and-test serve http://127.0.0.1:4173 \"lighthouse http://127.0.0.1:4173/fr/index.html --preset=desktop --only-categories=performance,accessibility,best-practices,seo --output=html --output-path=./reports/lighthouse-fr-index.html --chrome-flags='--headless=new'\"",
     "install:browsers": "playwright install chromium",
@@ -17,11 +21,24 @@
   },
   "devDependencies": {
     "@lhci/cli": "^0.15.1",
-    "@playwright/test": "^1.55.0",
+    "@playwright/test": "^1.58.2",
     "html-validate": "^9.7.1",
     "http-server": "^14.1.1",
     "lighthouse": "^12.8.2",
-    "linkinator": "^6.1.2",
+    "linkinator": "^6.3.0",
     "start-server-and-test": "^2.0.8"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devopsmanon-cmd/portfolio-freelance-pack4.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/devopsmanon-cmd/portfolio-freelance-pack4/issues"
+  },
+  "homepage": "https://github.com/devopsmanon-cmd/portfolio-freelance-pack4#readme"
 }

@@ -1,0 +1,32 @@
+﻿{
+  "ci": {
+    "collect": {
+      "startServerCommand": "npm run serve",
+      "startServerReadyPattern": "http://127.0.0.1:4173",
+      "url": [
+        "http://127.0.0.1:4173/fr/index.html",
+        "http://127.0.0.1:4173/fr/services.html",
+        "http://127.0.0.1:4173/fr/comparatif-agences.html",
+        "http://127.0.0.1:4173/fr/seo-local-avance.html",
+        "http://127.0.0.1:4173/en/index.html",
+        "http://127.0.0.1:4173/de/index.html"
+      ],
+      "numberOfRuns": 1,
+      "settings": {
+        "preset": "desktop"
+      }
+    },
+    "assert": {
+      "assertions": {
+        "categories:performance": ["warn", { "minScore": 0.9 }],
+        "categories:accessibility": ["warn", { "minScore": 0.9 }],
+        "categories:best-practices": ["warn", { "minScore": 0.9 }],
+        "categories:seo": ["warn", { "minScore": 0.9 }]
+      }
+    },
+    "upload": {
+      "target": "filesystem",
+      "outputDir": "./reports/lhci"
+    }
+  }
+}

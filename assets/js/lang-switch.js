@@ -1,4 +1,14 @@
 (function () {
+  // Fallback anti-clickjacking for environments where CSP frame-ancestors
+  // is not fully enforced from meta tags.
+  try {
+    if (window.top !== window.self) {
+      window.top.location = window.self.location;
+    }
+  } catch (e) {
+    window.self.location = window.self.location;
+  }
+
   var supported = ["fr", "en", "de"];
 
   function computeTargetLangUrl(newLang) {

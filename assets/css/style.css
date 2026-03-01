@@ -1353,6 +1353,42 @@ img {
   }
 }
 
+/* Mobile parity + frame cleanup */
+@media (max-width: 900px){
+  /* Keep all desktop comparison information available on mobile */
+  .pricing-compare .comparison{
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+  }
+
+  .pricing-compare .row{
+    min-width: 760px;
+  }
+
+  /* Remove unnecessary double frames in the hero right column */
+  .hero-grid aside.panel{
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .hero-grid aside.panel .panel{
+    box-shadow: none;
+    border: 1px solid rgba(255,255,255,.08);
+    background: rgba(255,255,255,.03);
+  }
+
+  /* Lighter cards on mobile: cleaner and less boxed-in feeling */
+  .home-offers .offer-card,
+  #temoignages .review-card,
+  .note{
+    border-color: rgba(255,255,255,.08);
+    box-shadow: none;
+  }
+}
+
 /* ===== Home offers (global, sans prix) ===== */
 .home-offers{
   padding: 80px 20px;
@@ -1379,7 +1415,6 @@ img {
   padding: 28px;
   border-radius: 18px;
   background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.10);
 }
 
 .home-offers .offer-card h3{

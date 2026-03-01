@@ -1370,7 +1370,7 @@ img {
 
 .home-offers .offers-grid{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
   margin-top: 40px;
 }
@@ -1393,6 +1393,12 @@ img {
 
 .home-offers .offers-cta{
   margin-top: 26px;
+}
+
+@media (max-width: 900px){
+  .home-offers .offers-grid{
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 680px){

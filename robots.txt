@@ -1,4 +1,5 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
 
-Sitemap: https://devopsmanon-cmd.github.io/portfolio_freelance_pack4/sitemap.xml
+Sitemap: https://devopsmanon-cmd.github.io/portfolio-freelance-pack4/sitemap.xml
+

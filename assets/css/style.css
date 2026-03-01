@@ -1430,8 +1430,34 @@ img {
   margin-top: 26px;
 }
 
+.content-growth .growth-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.content-growth .growth-card{
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 16px;
+  background: rgba(255,255,255,.03);
+  padding: 16px;
+}
+
+.content-growth .growth-card h3{
+  margin: 0 0 8px;
+}
+
+.content-growth .growth-card p{
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
 @media (max-width: 900px){
   .home-offers .offers-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .content-growth .growth-grid{
     grid-template-columns: 1fr;
   }
 }

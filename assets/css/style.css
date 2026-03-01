@@ -1578,7 +1578,86 @@ html[lang="de"] li{
   line-break: auto;
 }
 
+/* ===== Engagement & garantie: anti-serre, lisible, mobile ===== */
+.guarantee-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: start;
+  margin-top: 18px;
+}
+
+.guarantee-card{
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.04);
+  padding: 22px;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.guarantee-card h3{
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.guarantee-card p{
+  margin: 0;
+  line-height: 1.6;
+  opacity: 0.92;
+}
+
+.guarantee-list{
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.guarantee-list li{
+  line-height: 1.55;
+}
+
+.guarantee-actions{
+  margin-top: auto;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.guarantee-actions .btn{
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+
 @media (max-width: 900px){
+  .guarantee-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .guarantee-card{
+    padding: 20px;
+    min-height: auto;
+    gap: 12px;
+    border-color: rgba(255,255,255,0.08);
+    box-shadow: none;
+  }
+
+  .guarantee-actions{
+    gap: 8px;
+  }
+
+  .guarantee-actions .btn{
+    width: 100%;
+    justify-content: center;
+  }
+
   html[lang="fr"] .lead,
   html[lang="fr"] p,
   html[lang="fr"] li{
